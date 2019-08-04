@@ -1,0 +1,40 @@
+input,
+label,
+button {
+    margin: .5rem 0;
+}
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    border-bottom: .25rem solid black;
+    margin: 0em 1em;
+    padding: 1.5rem 0 !important;
+    width: 350px;
+}
+.contact-section {
+    display: flex;
+    display: -ms-flexbox;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.contact-container {
+    display: flex;
+    display: -ms-flexbox;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    width: 90%;
+    margin-top: 1rem;
+}
