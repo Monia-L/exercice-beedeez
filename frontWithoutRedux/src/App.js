@@ -6,17 +6,12 @@ class App extends Component {
   state = {
     data: [],
     loading: true,
-    search: "",
   }
 
   getAllCapsules = async () => {
     let pathApi = process.env.REACT_APP_PATH_API_DEV
     const caps = await axios.get(`${pathApi}`)
     await this.setState({ data: caps.data.results, loading: false })
-  }
-  searchQuery = (e) => {
-    this.setState({ search: e.target.value })
-    console.log(this.state.search);
   }
 
   componentDidMount = () => {
@@ -29,8 +24,9 @@ class App extends Component {
     }
     return (
       <div className="col">
-        <Search />
-        <button onClick={this.searchQuery} >Trouver !</button>
+        <div>
+          <Search />
+        </div>
         {data.map(list => {
           return (
             <div className="contact-section">
