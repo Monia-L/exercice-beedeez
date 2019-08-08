@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Search from './components/Search'
+//import Search from './components/Search';
+import SearchBar from './components/SearchBar'
 
 class App extends Component {
   state = {
@@ -25,7 +26,8 @@ class App extends Component {
     return (
       <div className="col">
         <div>
-          <Search />
+          <SearchBar />
+          {/* <Search /> */}
         </div>
         {data.map(list => {
           return (
@@ -41,7 +43,7 @@ class App extends Component {
                   </div>
                 </div>
               </div>
-              {/* <img src= {list.images[4]._id} alt={list.images[4].filename}/>  */}
+              {/* <img src= {list.images[4].url} alt={list.images[4].filename}/>  */}
             </div>
           )
         })}
