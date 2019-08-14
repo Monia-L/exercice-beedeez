@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-//import Search from './components/Search';
 import SearchBar from './components/SearchBar'
 
 class App extends Component {
@@ -9,11 +8,23 @@ class App extends Component {
     loading: true,
   }
 
+  // getAllCapsules = async () => {
+  //   let pathApi = process.env.REACT_APP_PATH_API_DEV
+  //   const caps = await axios.get(`${pathApi}`)
+  //   await this.setState({ data: caps.data.results, loading: false })
+  // }
+
   getAllCapsules = async () => {
-    let pathApi = process.env.REACT_APP_PATH_API_DEV
-    const caps = await axios.get(`${pathApi}`)
-    await this.setState({ data: caps.data.results, loading: false })
-  }
+   await axios("http://localhost:3005/beedeez/all")
+    //.then(response => response)
+    .then(data => {
+      this.setState({
+        data: data.data.results,
+        loading: false 
+      });
+    });
+    
+  } 
 
   componentDidMount = () => {
     this.getAllCapsules()
@@ -27,7 +38,6 @@ class App extends Component {
       <div className="col">
         <div>
           <SearchBar />
-          {/* <Search /> */}
         </div>
         {data.map(list => {
           return (
@@ -47,7 +57,7 @@ class App extends Component {
             </div>
           )
         })}
-      </div>
+      </div> 
     )
   }
 }

@@ -81,8 +81,8 @@ class SearchBar extends Component {
         return <div>
             <div>
 
-                <div className='modalWrapper'>
-                    <input placeholder='Recherche...' className='inputModal' onBlur={this.handleSearch}></input>
+                <div>
+                    <input placeholder='Recherche...' onBlur={this.handleSearch}></input>
                 </div>
                 <div>
                     {this.renderResults()}
