@@ -13,7 +13,7 @@ export function getAllCapsules() {
   return dispatch => {
     dispatch(loading(true));
 
-    axios.get("https://www.beedeez.com/api/v1/public/lessons/200/1")
+    axios.get("http://localhost:3005/beedeez/all")
       .then((res) => {
 
         dispatch(loading(false));
